@@ -1,0 +1,67 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteBase /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
+RewriteRule ^ %1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ $1.php [NC,L]
+
+# Redirects for .aspx to .php
+Redirect 301 /flat-travelling-cables.aspx /flat-travelling-cables.php
+Redirect 301 /contact.aspx /contact.php
+Redirect 301 /multicore-cables.aspx /multicore-cables.php
+Redirect 301 /about.aspx /about.php
+Redirect 301 /blog.aspx /blog.php
+Redirect 301 /cables.aspx /cables.php
+
+# Additional redirects for various pages
+Redirect 301 /career.aspx /career.php
+Redirect 301 /cctv-cables.aspx /cctv-cables.php
+Redirect 301 /certificate.aspx /certificate.php
+Redirect 301 /coaxial-cables.aspx /coaxial-cables.php
+Redirect 301 /control-panel-wires.aspx /control-panel-wires.php
+Redirect 301 /customized-wires.aspx /customized-wires.php
+Redirect 301 /flat-travelling-cables.aspx /flat-travelling-cables.php
+Redirect 301 /hookup-wires.aspx /hookup-wires.php
+Redirect 301 /household-wires.aspx /household-wires.php
+Redirect 301 /hrwires.aspx /hrwires.php
+Redirect 301 /index.aspx /index.php
+Redirect 301 /instrumentation-cables.aspx /instrumentation-cables.php
+Redirect 301 /lan-cables.aspx /lan-cables.php
+Redirect 301 /moulded-cords.aspx /moulded-cords.php
+Redirect 301 /multicore-cables.aspx /multicore-cables.php
+Redirect 301 /navbar.aspx /navbar.php
+Redirect 301 /news.aspx /news.php
+Redirect 301 /nose-wire.aspx /nose-wire.php
+Redirect 301 /shielded-cables.aspx /shielded-cables.php
+Redirect 301 /speaker-cables.aspx /speaker-cables.php
+Redirect 301 /spiral-cord.aspx /spiral-cord.php
+Redirect 301 /telecommunication-cables.aspx /telecommunication-cables.php
+Redirect 301 /wire-harness.aspx /wire-harness.php
+Redirect 301 /wires.aspx /wires.php
+Redirect 301 /rnd.aspx /rnd.php
+
+# Enable mod_rewrite, necessary for URL rewriting
+RewriteEngine On
+
+# Custom 404 Error Document
+ErrorDocument 404 /404.php
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php80” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php80___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>

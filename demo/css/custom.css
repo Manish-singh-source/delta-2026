@@ -1,0 +1,293 @@
+﻿@import url(custom.css);
+
+.sociales {
+    text-align: center;
+    margin-bottom: 20px
+}
+
+#timeline {
+    width: 800px;
+    height: 350px;
+    overflow: hidden;
+    margin: 100px auto;
+    position: relative;
+    background: url('../images/dot.gif') left 45px repeat-x
+}
+
+#dates {
+    width: 800px;
+    height: 60px;
+    overflow: hidden
+}
+
+#dates li {
+    list-style: none;
+    float: left;
+    width: 100px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    background: url('../images/biggerdot.png') center bottom no-repeat
+}
+
+#dates a {
+    line-height: 38px;
+    padding-bottom: 10px
+}
+
+#dates .selected {
+    font-size: 38px
+}
+
+#issues {
+    width: 800px;
+    height: 350px;
+    overflow: hidden
+}
+
+#issues li {
+    width: 800px;
+    height: 350px;
+    list-style: none;
+    float: left
+}
+
+#issues li.selected img {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1)
+}
+
+#issues li img {
+    float: left;
+    margin: 10px 30px 10px 50px;
+    background: 0 0;
+    zoom: 1;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    -ms-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+    -webkit-transform: scale(.7, .7);
+    -moz-transform: scale(.7, .7);
+    -o-transform: scale(.7, .7);
+    -ms-transform: scale(.7, .7);
+    transform: scale(.7, .7)
+}
+
+#issues li h1 {
+    color: #fc0;
+    font-size: 48px;
+    margin: 20px 0;
+    text-shadow: #000 1px 1px 2px;
+    text-align: left;
+    padding-left: 70px
+}
+
+#issues li p {
+    font-size: 14px;
+    margin-right: 70px;
+    margin-left: 70px;
+    font-weight: 400;
+    line-height: 22px;
+    text-shadow: #000 1px 1px 2px
+}
+
+#grad_left,
+#grad_right {
+    width: 100px;
+    height: 350px;
+    position: absolute;
+    top: 0
+}
+
+#grad_left {
+    left: 0;
+    background: url('../images/grad_left.png') repeat-y
+}
+
+#grad_right {
+    right: 0;
+    background: url('../images/grad_right.png') repeat-y
+}
+
+#next,
+#prev {
+    position: absolute;
+    top: 0;
+    font-size: 70px;
+    top: 170px;
+    width: 22px;
+    height: 38px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    overflow: hidden
+}
+
+#next:hover,
+#prev:hover {
+    background-position: 0 -76px
+}
+
+#next {
+    right: 0;
+    background: red
+}
+
+#prev {
+    left: 0;
+    background: #00f
+}
+
+#next.disabled,
+#prev.disabled {
+    opacity: .2
+}
+
+@media (min-width:1025px) and (max-width:1280px) {
+    .feature .fbox-content {
+        position: relative;
+        padding: 32px;
+        margin-bottom: 30px;
+        height: 320px
+    }
+}
+
+
+
+/* Process Boxes Desgin layout  */
+
+/* .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.infographic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.number {
+    font-size: 80px;
+    font-weight: bold;
+    opacity: 0.3;
+    margin: 0;
+}
+
+.title-shape {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.n1 {
+    color: #cddc39;
+}
+
+.n2 {
+    color: #4db6ac;
+}
+
+.n3 {
+    color: #e57373;
+}
+
+.n4 {
+    color: #8d6e63;
+} */
+
+
+/* Counter Section  */
+
+.counter-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .counter-box {
+      padding: 20px;
+    }
+
+    .counter-box h2 {
+    font-size: 65px;
+    font-weight: bold;
+    /* color: #e26d1c; */
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+    .counter-box h2::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      /* background: #002366; */
+      margin: 8px auto 12px;
+    }
+
+    .counter-box h3 {
+    font-size: 30px;
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+    .counter-box p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .counter-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .counter-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* Clients  */
+
+    .key .contents {
+        padding: 0px 110px;
+    }
+
+    /* .footer-col .wgs-content p,span {
+        display: flex;
+        align-items: center;
+        padding-right: 5px;
+    } */
+
+
+ 
