@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# cPanel mailbox SMTP password used by mail_config.php
+SetEnv DELTACAB_SMTP_PASSWORD "Wires531@"
+
 # Redirect technofra subdomain to main domain
 RewriteCond %{HTTP_HOST} ^deltacab\.co\.in\.technofra\.co\.in$ [NC]
 RewriteRule ^(.*)$ https://deltacab.co.in/$1 [R=301,L]

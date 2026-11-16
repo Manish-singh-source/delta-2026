@@ -3,6 +3,7 @@
 require(__DIR__ . '/PHPMailer/PHPMailerAutoload.php');
 require 'PHPMailer/class.phpmailer.php';
 require 'PHPMailer/class.smtp.php';
+require_once __DIR__ . '/mail_config.php';
 
 // Server-Side Validation
 $name = $_POST['name'];
@@ -348,16 +349,12 @@ $htmlbody = '
 
 // Admin Email Setup
 $mail = new PHPMailer();
-$mail->IsSMTP();
-$mail->Host = 'smtp.gmail.com';
-$mail->SMTPAuth = true;
-$mail->Username = 'support@technofra.com';
-$mail->Password = 'wtbm olzk gxee pusq';
-$mail->SMTPSecure = 'tls';
-$mail->Port = 587;
-
-$mail->setFrom('support@technofra.com', 'Delta Cab');
-$mail->addAddress('support@technofra.com');
+if (!configureDeltacabMailer($mail)) {
+    header('Location: failed.php');
+    exit;
+}
+$mail->addAddress('enquiry@deltacab.co.in');
+$mail->addReplyTo($email, $name);
 $mail->isHTML(true);
 $mail->Subject = 'Received an inquiry from the Delta Cab website contact page (' . $currentDateTime . ')';
 $mail->Body = $htmlbody;
@@ -370,15 +367,10 @@ if (!$mail->send()) {
 
 // Client Email Setup
 $client_mail = new PHPMailer();
-$client_mail->IsSMTP();
-$client_mail->Host = 'smtp.gmail.com';
-$client_mail->SMTPAuth = true;
-$client_mail->Username = 'support@technofra.com';
-$client_mail->Password = 'wtbm olzk gxee pusq';
-$client_mail->SMTPSecure = 'tls';
-$client_mail->Port = 587;
-
-$client_mail->setFrom('support@technofra.com', 'Delta Cab');
+if (!configureDeltacabMailer($client_mail)) {
+    header('Location: failed.php');
+    exit;
+}
 $client_mail->addAddress($email);
 $client_mail->isHTML(true);
 $client_mail->Subject = 'Thank You for Contacting Delta Cab (' . $currentDateTime . ')';

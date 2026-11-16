@@ -105,7 +105,7 @@
 <!-- JavaScript Bundle -->
 <script src="js/jquery.bundle.js"></script>
 <!-- Theme Script init() -->
-<script src="js/script.js"></script>
+<script src="js/script.js?v=2"></script>
 <!-- End script -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>

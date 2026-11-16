@@ -40,12 +40,15 @@
 		s = a.data("items") ? a.data("items") : 4,
 		t = s >= 3 ? 3 : s,
 		l = t >= 2 ? 2 : t,
+		m = a.data("items-mobile") ? parseInt(a.data("items-mobile"), 10) : (a.data("items-xs") ? parseInt(a.data("items-xs"), 10) : 1),
 		n = a.data("delay") ? a.data("delay") : 4e3,
 		i = !!a.data("auto"),
 		r = !!a.data("loop"),
 		o = !!a.data("dots"),
 		c = !!a.data("navs"),
-		d = a.data("margin") ? a.data("margin") : 30;
+		d = a.data("margin") ? a.data("margin") : 30,
+		dm = a.data("margin-mobile") !== undefined ? parseInt(a.data("margin-mobile"), 10) : (m > 1 ? 15 : d);
+		if (l < m) l = m;
 		a.owlCarousel({
 			navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
 			items: s,
@@ -58,16 +61,20 @@
 			autoplaySpeed: 700,
 			responsive: {
 				0: {
-					items: 1
+					items: m,
+					margin: dm
 				},
 				480: {
-					items: l
+					items: l,
+					margin: dm
 				},
 				768: {
-					items: t
+					items: t,
+					margin: d
 				},
 				1170: {
-					items: s
+					items: s,
+					margin: d
 				}
 			}
 		})
